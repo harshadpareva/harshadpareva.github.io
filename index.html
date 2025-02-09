@@ -13,6 +13,7 @@
             <a href="index.html" class="logo">
                 <img src="images/logo.png" alt="My Logo" width="150">
             </a>
+            <!-- Menu Button and Dropdown -->
             <nav class="nav-menu">
                 <div class="menu-box">
                     <button class="menu-btn">
@@ -87,6 +88,13 @@
 
         menuBtn.addEventListener('click', () => {
             dropdownMenu.classList.toggle('show');
+        });
+
+        // Optional: Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.menu-box')) {
+                dropdownMenu.classList.remove('show');
+            }
         });
     </script>
 </body>
