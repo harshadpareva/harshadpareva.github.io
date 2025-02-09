@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embracing Change - Harshad Pareva</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="My Logo" width="150">
+            </a>
+            <!-- Menu Button and Dropdown -->
+            <nav class="nav-menu">
+                <div class="menu-box">
+                    <button class="menu-btn">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="index.html">Home</a>
+                        <a href="blogs.html">Blogs</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="about.html">About Me</a>
+                    </div>
+                </div>
+            </nav>
+            <h1>Harshad Pareva</h1>
+            <p>Always getting better</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="blog-content">
+        <h1>Embracing Change</h1>
+        <p class="blog-date">Published on: October 15, 2023</p>
+        
+        <!-- Blog Content -->
+        <article>
+            <p>Change is inevitable. Whether it’s in our personal lives, careers, or the world around us, learning to embrace change is crucial for growth and success.</p>
+            
+            <h2>Why Change is Important</h2>
+            <p>Change pushes us out of our comfort zones and forces us to adapt. It’s through these challenges that we learn, grow, and become better versions of ourselves.</p>
+            
+            <h2>How to Embrace Change</h2>
+            <ul>
+                <li><strong>Stay Open-Minded:</strong> Be willing to explore new ideas and perspectives.</li>
+                <li><strong>Focus on the Positive:</strong> Look for opportunities in every change.</li>
+                <li><strong>Take Small Steps:</strong> Break down big changes into smaller, manageable actions.</li>
+            </ul>
+            
+            <p>Remember, change is not something to fear—it’s something to embrace.</p>
+        </article>
+
+        <!-- Back to Blogs Link -->
+        <a href="blogs.html" class="back-to-blogs">← Back to Blogs</a>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>© 2024 Harshad Pareva. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Dropdown Menu -->
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        menuBtn.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('show');
+        });
+
+        // Optional: Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.menu-box')) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
