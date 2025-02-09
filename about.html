@@ -57,3 +57,18 @@
     </main>
 </body>
 </html>
+<script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    menuBtn.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('show');
+    });
+
+    // Optional: Close dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.menu-box')) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
+</script>
