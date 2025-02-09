@@ -23,6 +23,13 @@ header {
   position: relative;
 }
 
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
 .logo {
   position: absolute;
   top: 10px;
@@ -50,6 +57,61 @@ header {
 
 .nav-menu a:hover {
   color: #007bff;
+}
+
+/* Dropdown Menu */
+.nav-menu .menu-box {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 25px;
+  width: 30px;
+}
+
+.menu-btn .line {
+  width: 30px;
+  height: 4px;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.dropdown-menu a {
+  display: block;
+  color: #333;
+  padding: 8px 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-menu.show {
+  display: block;
 }
 
 /* Main Content */
@@ -93,7 +155,7 @@ header {
   border: 1px solid #eee;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .blog-box h3 {
@@ -156,59 +218,4 @@ footer {
 
 .social-icons a:hover {
   color: #007bff;
-}
-
-/* Dropdown Menu */
-.nav-menu .menu-box {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-.menu-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 25px;
-  width: 30px;
-}
-
-.menu-btn .line {
-  width: 30px;
-  height: 4px;
-  background-color: #333;
-  border-radius: 5px;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 40px;
-  right: 0;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.dropdown-menu a {
-  display: block;
-  color: #333;
-  padding: 8px 10px;
-  text-decoration: none;
-  border-bottom: 1px solid #ddd;
-}
-
-.dropdown-menu a:hover {
-  background-color: #f0f0f0;
-}
-
-.dropdown-menu.show {
-  display: block;
 }
