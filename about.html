@@ -4,37 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Harshad Pareva</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header Section with Logo and Navigation -->
-   <header>
-    <div class="header-content">
-        <a href="index.html" class="logo">
-            <img src="images/logo.png" alt="My Logo" width="150">
-        </a>
-        <!-- Menu Button and Dropdown -->
-        <nav class="nav-menu">
-            <div class="menu-box">
-                <button class="menu-btn">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                </button>
-                <div class="dropdown-menu">
-                    <a href="index.html">Home</a>
-                    <a href="blogs.html">Blogs</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="about.html">About Me</a>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="My Logo" width="150">
+            </a>
+            <!-- Menu Button and Dropdown -->
+            <nav class="nav-menu">
+                <div class="menu-box">
+                    <button class="menu-btn">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="index.html">Home</a>
+                        <a href="blogs.html">Blogs</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="about.html">About Me</a>
+                    </div>
                 </div>
-            </div>
-        </nav>
-        <h1>Harshad Pareva</h1>
-        <p>Always getting better</p>
-    </div>
-</header>
-    <!-- About Me Content -->
-    <main class="main-content">
+            </nav>
+            <h1>Harshad Pareva</h1>
+            <p>Always getting better</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
         <h1>About Me 👋</h1>
         <p>Hi! I'm Harshad Pareva, and I love writing about Life.</p>
 
@@ -55,20 +56,33 @@
         <!-- Back to Home Link -->
         <a href="index.html">Go back to Home</a>
     </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>© 2024 Harshad Pareva. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Dropdown Menu -->
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        menuBtn.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('show');
+        });
+
+        // Optional: Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.menu-box')) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
-<script>
-    const menuBtn = document.querySelector('.menu-btn');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-
-    menuBtn.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('show');
-    });
-
-    // Optional: Close dropdown when clicking outside
-    document.addEventListener('click', (event) => {
-        if (!event.target.closest('.menu-box')) {
-            dropdownMenu.classList.remove('show');
-        }
-    });
-</script>
