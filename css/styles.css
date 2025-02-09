@@ -379,3 +379,14 @@ footer {
 .contact-form button:hover {
     background: #0056b3;
 }
+h1 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 img {
+    margin-left: 10px; /* Space between text and icon */
+    width: 24px; /* Adjust size if needed */
+}
