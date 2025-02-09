@@ -9,21 +9,18 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;
+  background-color: #f9f9f9;
 }
 
 /* Header */
 header {
-  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 20px;
+  background: #f8f8f8;
   border-bottom: 2px solid #eee;
   position: relative;
-}
-
-.header-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 20px;
 }
 
 .logo {
@@ -32,6 +29,12 @@ header {
   left: 10px;
 }
 
+.logo img {
+  border-radius: 50%; /* Makes the logo circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow */
+}
+
+/* Navigation Styles */
 .nav-menu {
   position: absolute;
   top: 10px;
@@ -47,16 +50,6 @@ header {
 
 .nav-menu a:hover {
   color: #007bff;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin-top: 20px;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: #666;
 }
 
 /* Main Content */
@@ -165,47 +158,7 @@ footer {
   color: #007bff;
 }
 
-
-.nav-menu .menu-box {
-  position: relative;
-}
-
-.menu-btn {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 40px;
-  left: 0;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.dropdown-menu a {
-  display: block;
-  color: #333;
-  padding: 8px 10px;
-  text-decoration: none;
-  border-bottom: 1px solid #ddd;
-}
-
-.dropdown-menu a:hover {
-  background-color: #f0f0f0;
-}
-
-.dropdown-menu.show {
-  display: block;
-}
-
+/* Dropdown Menu */
 .nav-menu .menu-box {
   position: relative;
   display: flex;
@@ -258,12 +211,4 @@ footer {
 
 .dropdown-menu.show {
   display: block;
-}
-body {
-    background-color: lightblue;
-    font-family: Arial, sans-serif;
-}
-h1 {
-    color: darkblue;
-    text-align: center;
 }
