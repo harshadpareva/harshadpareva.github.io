@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Harshad Pareva</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="My Logo" width="150">
+            </a>
+            <!-- Menu Button and Dropdown -->
+            <nav class="nav-menu">
+                <div class="menu-box">
+                    <button class="menu-btn">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="index.html">Home</a>
+                        <a href="blogs.html">Blogs</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="about.html">About Me</a>
+                    </div>
+                </div>
+            </nav>
+            <h1>Harshad Pareva</h1>
+            <p>Always getting better</p>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>My Blogs 📚</h1>
+        <p>Explore my latest blog posts and stories.</p>
+    </main>
+    
+    <!-- Blog List Section -->
+    <section class="latest-blogs">
+        <h2>All Blogs</h2>
+        <div class="blog-container">
+            <!-- Blog 1 -->
+            <div class="blog-box">
+                <h3>Blog 1: The Power of Consistency</h3>
+                <p>In this blog, I discuss how consistency can transform your life and help you achieve your goals.</p>
+                <a href="blog1.html">Read more →</a>
+            </div>
+            <!-- Blog 2 -->
+            <div class="blog-box">
+                <h3>Blog 2: Embracing Change</h3>
+                <p>Change is inevitable. Learn how to embrace it and turn it into an opportunity for growth.</p>
+                <a href="blog2.html">Read more →</a>
+            </div>
+            <!-- Blog 3 -->
+            <div class="blog-box">
+                <h3>Blog 3: The Art of Writing</h3>
+                <p>Writing is more than just putting words on paper. Discover the art behind it.</p>
+                <a href="blog3.html">Read more →</a>
+            </div>
+            <!-- Blog 4 -->
+            <div class="blog-box">
+                <h3>Blog 4: Finding Balance</h3>
+                <p>Balancing work, life, and personal growth can be challenging. Here are some tips to help you find harmony.</p>
+                <a href="blog4.html">Read more →</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>© 2024 Harshad Pareva. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Dropdown Menu -->
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        menuBtn.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('show');
+        });
+
+        // Optional: Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.menu-box')) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
