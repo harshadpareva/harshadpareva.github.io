@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Consistency - Harshad Pareva</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="My Logo" width="150">
+            </a>
+            <!-- Menu Button and Dropdown -->
+            <nav class="nav-menu">
+                <div class="menu-box">
+                    <button class="menu-btn">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="index.html">Home</a>
+                        <a href="blogs.html">Blogs</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="about.html">About Me</a>
+                    </div>
+                </div>
+            </nav>
+            <h1>Harshad Pareva</h1>
+            <p>Always getting better</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="blog-content">
+        <h1>The Power of Consistency</h1>
+        <p class="blog-date">Published on: October 10, 2023</p>
+        
+        <!-- Blog Content -->
+        <article>
+            <p>Consistency is the key to success. Whether you're working on personal goals, building a business, or learning a new skill, showing up every day and putting in the effort is what makes the difference.</p>
+            
+            <h2>Why Consistency Matters</h2>
+            <p>Consistency helps you build habits. When you do something repeatedly, it becomes a part of your routine. Over time, these small, consistent actions compound into significant results.</p>
+            
+            <h2>How to Stay Consistent</h2>
+            <ul>
+                <li><strong>Set Clear Goals:</strong> Know what you want to achieve and break it down into smaller, manageable tasks.</li>
+                <li><strong>Track Your Progress:</strong> Keep a journal or use an app to track your daily progress.</li>
+                <li><strong>Stay Accountable:</strong> Share your goals with a friend or join a community that supports your journey.</li>
+            </ul>
+            
+            <p>Remember, consistency doesn’t mean perfection. It’s about showing up and doing the work, even when it’s hard.</p>
+        </article>
+
+        <!-- Back to Blogs Link -->
+        <a href="blogs.html" class="back-to-blogs">← Back to Blogs</a>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-icons">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>© 2024 Harshad Pareva. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Dropdown Menu -->
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        menuBtn.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('show');
+        });
+
+        // Optional: Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.menu-box')) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
