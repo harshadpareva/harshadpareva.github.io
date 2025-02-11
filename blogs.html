@@ -119,5 +119,25 @@
             }
         });
     </script>
+    <script>
+    // Search Functionality
+    const searchInput = document.getElementById('search-input');
+    const blogBoxes = document.querySelectorAll('.blog-box');
+
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+
+        blogBoxes.forEach(blog => {
+            const title = blog.querySelector('h3').textContent.toLowerCase();
+            const content = blog.querySelector('p').textContent.toLowerCase();
+            
+            if (title.includes(searchTerm) || content.includes(searchTerm)) {
+                blog.style.display = 'block'; // Show matching posts
+            } else {
+                blog.style.display = 'none';  // Hide non-matching posts
+            }
+        });
+    });
+</script>
 </body>
 </html>
