@@ -460,3 +460,10 @@ h1 img {
     border-color: #007bff;
     box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
 }
+/* No Results Message */
+.no-results {
+    text-align: center;
+    color: #666;
+    margin-top: 20px;
+    font-style: italic;
+}
