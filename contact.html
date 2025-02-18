@@ -7,74 +7,63 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="My Logo" width="150">
+                <img src="images/logo.png" alt="My Blog Logo" width="150">
             </a>
-            <!-- Menu Button and Dropdown -->
             <nav class="nav-menu">
-                <div class="menu-box">
-                    <button class="menu-btn">
-                        <span class="line"></span>
-                        <span class="line"></span>
-                        <span class="line"></span>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a href="index.html">Home</a>
-                        <a href="blogs.html">Blogs</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="about.html">About Me</a>
-                    </div>
-                </div>
+                <a href="index.html">Home</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About Me</a>
             </nav>
-            <h1>Harshad Pareva</h1>
-            <p>Always getting better</p>
+            <h1>Contact Me</h1>
+            <p>Let's connect and collaborate!</p>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <h1>Contact Me 📧</h1>
-        
-        <!-- Contact Form -->
-        <form class="contact-form" action="https://formspree.io/f/xgvozkve" method="POST">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+    <main class="contact-content">
+        <section class="contact-form">
+            <h2>Send Me a Message</h2>
+            <form action="https://formspree.io/f/xgvozkve" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <section class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Feel free to reach out via email or connect with me on social media.</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:yourname@example.com">yourname@example.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></li>
+                <li><strong>Twitter:</strong> <a href="https://twitter.com/yourhandle">@yourhandle</a></li>
+            </ul>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.6789101112!2d-122.123456789!3d37.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDA3JzI0LjQiTiAxMjLCsDA3JzI0LjQiVw!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                    width="100%"
+                    height="300"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
             </div>
-
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-
-            <button type="submit">Send Message</button>
-        </form>
-
-        <!-- Form Message -->
-        <div id="form-message" class="form-message"></div>
-
-        <!-- Optional: Add a Map -->
-        <div class="map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1dYOUR_LATITUDE!2dYOUR_LONGITUDE!3dYOUR_ZOOM_LEVEL!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zYOUR_LATITUDE!3dYOUR_LONGITUDE!5e0!3m2!1sen!2sus!4vYOUR_TIMESTAMP"
-                width="100%"
-                height="300"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy">
-            </iframe>
-        </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="social-icons">
             <a href="#">Instagram</a>
@@ -84,59 +73,42 @@
         </div>
         <p>© 2024 Harshad Pareva. All rights reserved.</p>
     </footer>
-
-    <!-- JavaScript for Form Submission -->
-    <script>
-        const form = document.querySelector(".contact-form");
-        const formMessage = document.getElementById("form-message");
-
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault(); // Stop page reload
-            
-            try {
-                // Send data to Formspree
-                const response = await fetch(form.action, {
-                    method: "POST",
-                    body: new FormData(form),
-                    headers: { Accept: "application/json" },
-                });
-
-                // Success Message
-                if (response.ok) {
-                    formMessage.textContent = "Thanks for your message! 🎉 I will try my best to revert you back as soon as I can !!";
-                    formMessage.classList.add("success");
-                    formMessage.classList.remove("error");
-                    form.reset(); // Clear form fields
-                } 
-                // Error Message
-                else {
-                    formMessage.textContent = "Oops! Something went wrong. Please try again.";
-                    formMessage.classList.add("error");
-                    formMessage.classList.remove("success");
-                }
-            } 
-            // Network Error Message
-            catch (error) {
-                formMessage.textContent = "Network error. Check your internet connection.";
-                formMessage.classList.add("error");
-                formMessage.classList.remove("success");
-            }
-        });
-    </script>
 </body>
 </html>
 <script>
-  const menuBtn = document.querySelector('.menu-btn');
-  const dropdownMenu = document.querySelector('.dropdown-menu');
+    const form = document.querySelector(".contact-form");
+    const formMessage = document.getElementById("form-message");
 
-  menuBtn.addEventListener('click', () => {
-      dropdownMenu.classList.toggle('show');
-  });
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault(); // Stop page reload
+        
+        try {
+            // Send data to Formspree
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: { Accept: "application/json" },
+            });
 
-  // Optional: Close dropdown when clicking outside
-  document.addEventListener('click', (event) => {
-      if (!event.target.closest('.menu-box')) {
-          dropdownMenu.classList.remove('show');
-      }
-  });
+            // Success Message
+            if (response.ok) {
+                formMessage.textContent = "Thanks for your message! 🎉 I will try my best to revert you back as soon as I can !!";
+                formMessage.classList.add("success");
+                formMessage.classList.remove("error");
+                form.reset(); // Clear form fields
+            } 
+            // Error Message
+            else {
+                formMessage.textContent = "Oops! Something went wrong. Please try again.";
+                formMessage.classList.add("error");
+                formMessage.classList.remove("success");
+            }
+        } 
+        // Network Error Message
+        catch (error) {
+            formMessage.textContent = "Network error. Check your internet connection.";
+            formMessage.classList.add("error");
+            formMessage.classList.remove("success");
+        }
+    });
 </script>
