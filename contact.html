@@ -41,6 +41,8 @@
                 </div>
                 <button type="submit">Send Message</button>
             </form>
+            <!-- Form Message -->
+            <div id="form-message" class="form-message"></div>
         </section>
 
         <section class="contact-info">
@@ -73,42 +75,50 @@
         </div>
         <p>© 2024 Harshad Pareva. All rights reserved.</p>
     </footer>
-</body>
-</html>
-<script>
-    const form = document.querySelector(".contact-form");
-    const formMessage = document.getElementById("form-message");
 
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault(); // Stop page reload
-        
-        try {
-            // Send data to Formspree
-            const response = await fetch(form.action, {
-                method: "POST",
-                body: new FormData(form),
-                headers: { Accept: "application/json" },
-            });
+    <script>
+        const form = document.querySelector(".contact-form");
+        const formMessage = document.getElementById("form-message");
 
-            // Success Message
-            if (response.ok) {
-                formMessage.textContent = "Thanks for your message! 🎉 I will try my best to revert you back as soon as I can !!";
-                formMessage.classList.add("success");
-                formMessage.classList.remove("error");
-                form.reset(); // Clear form fields
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault(); // Stop page reload
+            
+            console.log("Form submitted"); // Debugging
+
+            try {
+                // Send data to Formspree
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: new FormData(form),
+                    headers: { Accept: "application/json" },
+                });
+
+                console.log("Response status:", response.status); // Debugging
+
+                // Success Message
+                if (response.ok) {
+                    console.log("Form submitted successfully"); // Debugging
+                    formMessage.textContent = "Thanks for your message! 🎉 I will try my best to revert you back as soon as I can !!";
+                    formMessage.classList.add("success");
+                    formMessage.classList.remove("error");
+                    form.reset(); // Clear form fields
+                } 
+                // Error Message
+                else {
+                    console.log("Form submission failed"); // Debugging
+                    formMessage.textContent = "Oops! Something went wrong. Please try again.";
+                    formMessage.classList.add("error");
+                    formMessage.classList.remove("success");
+                }
             } 
-            // Error Message
-            else {
-                formMessage.textContent = "Oops! Something went wrong. Please try again.";
+            // Network Error Message
+            catch (error) {
+                console.error("Network error:", error); // Debugging
+                formMessage.textContent = "Network error. Check your internet connection.";
                 formMessage.classList.add("error");
                 formMessage.classList.remove("success");
             }
-        } 
-        // Network Error Message
-        catch (error) {
-            formMessage.textContent = "Network error. Check your internet connection.";
-            formMessage.classList.add("error");
-            formMessage.classList.remove("success");
-        }
-    });
-</script>
+        });
+    </script>
+</body>
+</html>
