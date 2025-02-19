@@ -41,7 +41,7 @@
                 </div>
                 <button type="submit">Send Message</button>
             </form>
-            <!-- Added this message container -->
+            <!-- Message container to display success/error messages -->
             <p id="form-message"></p>
         </section>
 
@@ -76,7 +76,7 @@
         <p>© 2024 Harshad Pareva. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript placed before closing body tag -->
+    <!-- JavaScript for Form Handling -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const form = document.querySelector(".contact-form form");
@@ -89,31 +89,32 @@
 
             form.addEventListener("submit", async (e) => {
                 e.preventDefault(); // Stop page reload
+                formMessage.textContent = "Form submitted..."; // Debugging log
 
                 try {
-                    // Send data to Formspree
+                    // Ensure form element is correctly selected
+                    if (!(form instanceof HTMLFormElement)) {
+                        throw new Error("Form element not found.");
+                    }
+
                     const response = await fetch(form.action, {
                         method: "POST",
                         body: new FormData(form),
                         headers: { Accept: "application/json" },
                     });
 
-                    // Success Message
                     if (response.ok) {
-                        formMessage.textContent = "Thanks for your message! 🎉 I will try my best to revert you back as soon as I can !!";
+                        formMessage.textContent = "Thanks for your message! 🎉 I will try my best to revert you back as soon as I can!";
                         formMessage.classList.add("success");
                         formMessage.classList.remove("error");
                         form.reset(); // Clear form fields
-                    } 
-                    // Error Message
-                    else {
+                    } else {
                         formMessage.textContent = "Oops! Something went wrong. Please try again.";
                         formMessage.classList.add("error");
                         formMessage.classList.remove("success");
                     }
-                } 
-                // Network Error Message
-                catch (error) {
+                } catch (error) {
+                    console.error("Network error:", error);
                     formMessage.textContent = "Network error. Check your internet connection.";
                     formMessage.classList.add("error");
                     formMessage.classList.remove("success");
