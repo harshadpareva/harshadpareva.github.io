@@ -808,3 +808,51 @@ button[type="submit"]:hover {
         margin: 5px 0;
     }
 }
+/* Mobile Menu */
+.menu-btn {
+    display: none; /* Hide by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    background: #f8f8f8;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Hide by default */
+}
+
+.dropdown-menu a {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Show menu on mobile */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-menu a {
+        display: none; /* Hide regular menu links */
+    }
+
+    .dropdown-menu.show {
+        display: flex; /* Show dropdown menu */
+    }
+}
