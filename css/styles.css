@@ -763,3 +763,48 @@ button[type="submit"]:hover {
       height: 200px; /* Smaller height for mobile */
   }
 }
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Header */
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    .nav-menu {
+        position: static;
+        margin-top: 10px;
+    }
+
+    /* Main Content */
+    .main-content {
+        padding: 20px;
+    }
+
+    .main-content h1 {
+        font-size: 2rem;
+    }
+
+    .main-content p {
+        font-size: 1rem;
+    }
+
+    /* Blog Grid */
+    .blog-container {
+        grid-template-columns: 1fr; /* Stack blog boxes vertically */
+    }
+
+    /* Footer */
+    .social-icons {
+        flex-direction: column;
+    }
+
+    .social-icons a {
+        margin: 5px 0;
+    }
+}
