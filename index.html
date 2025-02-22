@@ -130,5 +130,44 @@
         }
     });
 </script>
+    <script>
+    let currentSlide = 0;
+    const slides = document.querySelector('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+
+    // Function to show a specific slide
+    function showSlide(index) {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    // Auto-rotate the carousel every 5 seconds
+    function autoRotate() {
+        currentSlide = (currentSlide + 1) % dots.length;
+        showSlide(currentSlide);
+    }
+
+    let autoSlideInterval = setInterval(autoRotate, 5000);
+
+    // Pause auto-rotation on hover
+    const carouselContainer = document.querySelector('.carousel-container');
+    carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+    });
+
+    carouselContainer.addEventListener('mouseleave', () => {
+        autoSlideInterval = setInterval(autoRotate, 5000);
+    });
+
+    // Manual navigation using dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+    });
+</script>
 </body>
 </html>
