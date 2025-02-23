@@ -862,22 +862,10 @@ header {
 
 .nav-menu {
   display: flex;
+  align-items: center;
   gap: 20px; /* Space between menu items */
 }
 
-.nav-menu a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.nav-menu a:hover {
-  color: #007bff; /* Highlight color on hover */
-}
-
-/* Mobile Menu Styles */
 .menu-btn {
   display: none; /* Hide by default */
   background: none;
@@ -924,14 +912,14 @@ header {
 /* Responsive Menu */
 @media (max-width: 768px) {
   .nav-menu {
-    display: none; /* Hide regular menu on mobile */
+    gap: 10px; /* Reduce gap for smaller screens */
   }
 
   .menu-btn {
     display: block; /* Show hamburger menu button */
   }
 
-  .dropdown-menu.show {
-    display: block; /* Show dropdown menu when toggled */
+  .dropdown-menu {
+    top: 50px; /* Adjust position for mobile */
   }
 }
