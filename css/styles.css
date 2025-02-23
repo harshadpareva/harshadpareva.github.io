@@ -909,14 +909,31 @@ header {
   display: block;
 }
 
-/* Responsive Menu */
-@media (max-width: 768px) {
-  .nav-menu {
-    gap: 10px; /* Reduce gap for smaller screens */
-  }
+/* Mobile Menu Button */
+.menu-btn {
+  display: none; /* Hide by default on desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
 
+.menu-btn .line {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 5px 0;
+  transition: transform 0.3s ease;
+}
+
+/* Show menu button on mobile */
+@media (max-width: 768px) {
   .menu-btn {
     display: block; /* Show hamburger menu button */
+  }
+
+  .nav-menu a {
+    display: none; /* Hide regular menu links on mobile */
   }
 
   .dropdown-menu {
