@@ -161,5 +161,21 @@
             });
         });
     </script>
+    <script>
+  // Dropdown Menu Toggle
+  const menuBtn = document.querySelector('.menu-btn');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+
+  menuBtn.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('show');
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-menu')) {
+      dropdownMenu.classList.remove('show');
+    }
+  });
+</script>
 </body>
 </html>
