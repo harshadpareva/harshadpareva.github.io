@@ -63,11 +63,8 @@ button:hover, .btn:hover {
 
 /* Header */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
   background: #f8f8f8;
+  padding: 20px;
   border-bottom: 2px solid #eee;
   position: relative;
 }
@@ -75,93 +72,83 @@ header {
 .header-content {
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 20px;
-}
-
-.logo {
-  position: absolute;
-  top: 10px;
-  left: 10px;
 }
 
 .logo img {
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 150px; /* Adjust as needed */
 }
 
-/* Navigation Styles */
+/* Navigation Menu */
 .nav-menu {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.nav-menu a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-.nav-menu a:hover {
-  color: #007bff;
-}
-
-/* Dropdown Menu */
-.nav-menu .menu-box {
-  position: relative;
   display: flex;
-  justify-content: flex-end;
-  width: 100%;
+  align-items: center;
+  gap: 20px; /* Space between menu items */
 }
 
+/* Hamburger Button */
 .menu-btn {
+  display: none; /* Hide by default on desktop */
   background: none;
   border: none;
   cursor: pointer;
   padding: 10px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 25px;
-  width: 30px;
 }
 
 .menu-btn .line {
-  width: 30px;
-  height: 4px;
-  background-color: #333;
-  border-radius: 5px;
+  width: 25px;
+  height: 3px;
+  background: #333;
+  margin: 5px 0;
+  transition: transform 0.3s ease;
 }
 
+/* Dropdown Menu */
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 40px;
-  right: 0;
-  background-color: #fff;
+  top: 60px;
+  right: 20px;
+  background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
   border-radius: 5px;
   z-index: 1000;
 }
 
 .dropdown-menu a {
   display: block;
+  padding: 10px 20px;
   color: #333;
-  padding: 8px 10px;
   text-decoration: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
 }
 
 .dropdown-menu a:hover {
-  background-color: #f0f0f0;
+  background: #f0f0f0;
 }
 
 .dropdown-menu.show {
   display: block;
+}
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block; /* Show hamburger menu button */
+  }
+
+  .nav-menu a {
+    display: none; /* Hide regular menu links on mobile */
+  }
+
+  .dropdown-menu {
+    top: 50px; /* Adjust position for mobile */
+  }
 }
 
 /* Main Content */
@@ -835,108 +822,5 @@ footer {
 
   .hero p {
       font-size: 1rem;
-  }
-}
-/* Header and Menu Styles */
-header {
-  background: #f8f8f8;
-  padding: 20px;
-  border-bottom: 2px solid #eee;
-  position: relative;
-}
-
-.header-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.logo img {
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 150px; /* Adjust as needed */
-}
-
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* Space between menu items */
-}
-
-.menu-btn {
-  display: none; /* Hide by default */
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.menu-btn .line {
-  width: 25px;
-  height: 3px;
-  background: #333;
-  margin: 5px 0;
-  transition: transform 0.3s ease;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  z-index: 1000;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-  color: #333;
-  text-decoration: none;
-  border-bottom: 1px solid #eee;
-}
-
-.dropdown-menu a:hover {
-  background: #f0f0f0;
-}
-
-.dropdown-menu.show {
-  display: block;
-}
-
-/* Mobile Menu Button */
-.menu-btn {
-  display: none; /* Hide by default on desktop */
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.menu-btn .line {
-  width: 25px;
-  height: 3px;
-  background: #333;
-  margin: 5px 0;
-  transition: transform 0.3s ease;
-}
-
-/* Show menu button on mobile */
-@media (max-width: 768px) {
-  .menu-btn {
-    display: block; /* Show hamburger menu button */
-  }
-
-  .nav-menu a {
-    display: none; /* Hide regular menu links on mobile */
-  }
-
-  .dropdown-menu {
-    top: 50px; /* Adjust position for mobile */
   }
 }
