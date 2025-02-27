@@ -110,26 +110,31 @@
 
     <!-- JavaScript -->
     <script>
-        // Dropdown Menu
-        const menuBtn = document.querySelector('.menu-btn');
-        const dropdownMenu = document.querySelector('.dropdown-menu');
+        document.addEventListener("DOMContentLoaded", () => {
+    // Dropdown Menu
+    const menuBtn = document.querySelector('.menu-btn');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
 
-        menuBtn.addEventListener('click', () => {
+    if (menuBtn && dropdownMenu) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent immediate closing
             dropdownMenu.classList.toggle('show');
         });
 
-        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.nav-menu')) {
                 dropdownMenu.classList.remove('show');
             }
         });
+    }
 
-        // Carousel
-        let currentSlide = 0;
-        const slides = document.querySelector('.carousel-slide');
-        const dots = document.querySelectorAll('.dot');
+    // Carousel
+    let currentSlide = 0;
+    const slides = document.querySelector('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const carouselContainer = document.querySelector('.carousel-container');
 
+    if (slides && dots.length > 0 && carouselContainer) {
         function showSlide(index) {
             slides.style.transform = `translateX(-${index * 100}%)`;
             dots.forEach((dot, i) => {
@@ -144,7 +149,6 @@
 
         let autoSlideInterval = setInterval(autoRotate, 5000);
 
-        const carouselContainer = document.querySelector('.carousel-container');
         carouselContainer.addEventListener('mouseenter', () => {
             clearInterval(autoSlideInterval);
         });
@@ -159,6 +163,12 @@
                 showSlide(currentSlide);
             });
         });
+
+        // Initialize first slide
+        showSlide(currentSlide);
+    }
+});
+
     </script>
 </body>
 </html>
