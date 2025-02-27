@@ -63,7 +63,6 @@ header {
   display: flex;
   align-items: center;
   gap: 20px;
-  position: relative; /* Ensures dropdown positions correctly */
 }
 
 /* Hamburger Button */
@@ -88,12 +87,11 @@ header {
   display: none;
   position: absolute;
   top: 60px;
-  right: 0;
+  right: 20px;
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   z-index: 1000;
-  min-width: 150px;
 }
 
 .dropdown-menu a {
@@ -110,7 +108,7 @@ header {
 
 /* Show dropdown when menu is active */
 .dropdown-menu.show {
-  display: block !important;
+  display: block;
 }
 
 /* Responsive Styles */
