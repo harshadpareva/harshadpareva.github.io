@@ -133,7 +133,7 @@ header {
   }
 
   .nav-menu a {
-    display: none; /* Hide regular menu links on mobile */
+    display: block; /* Hide regular menu links on mobile */
   }
 
   .dropdown-menu {
