@@ -95,6 +95,67 @@
         </div>
     </section>
 
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Dropdown Menu
+    const menuBtn = document.querySelector('.menu-btn');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    if (menuBtn && dropdownMenu) {
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent immediate closing
+        dropdownMenu.classList.toggle('show');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-menu')) {
+          dropdownMenu.classList.remove('show');
+        }
+      });
+    }
+
+    // Carousel
+    let currentSlide = 0;
+    const slides = document.querySelector('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+    const carouselContainer = document.querySelector('.carousel-container');
+
+    if (slides && dots.length > 0 && carouselContainer) {
+      function showSlide(index) {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      }
+
+      function autoRotate() {
+        currentSlide = (currentSlide + 1) % dots.length;
+        showSlide(currentSlide);
+      }
+
+      let autoSlideInterval = setInterval(autoRotate, 5000);
+
+      carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+      });
+
+      carouselContainer.addEventListener('mouseleave', () => {
+        autoSlideInterval = setInterval(autoRotate, 5000);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentSlide = index;
+          showSlide(currentSlide);
+        });
+      });
+
+      // Initialize first slide
+      showSlide(currentSlide);
+    }
+  });
+</script>
+    
     <!-- Footer -->
     <footer>
         <div class="container footer-content">
@@ -107,68 +168,5 @@
             <p>© 2024 Harshad Pareva. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-    // Dropdown Menu
-    const menuBtn = document.querySelector('.menu-btn');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-
-    if (menuBtn && dropdownMenu) {
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent immediate closing
-            dropdownMenu.classList.toggle('show');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-menu')) {
-                dropdownMenu.classList.remove('show');
-            }
-        });
-    }
-
-    // Carousel
-    let currentSlide = 0;
-    const slides = document.querySelector('.carousel-slide');
-    const dots = document.querySelectorAll('.dot');
-    const carouselContainer = document.querySelector('.carousel-container');
-
-    if (slides && dots.length > 0 && carouselContainer) {
-        function showSlide(index) {
-            slides.style.transform = `translateX(-${index * 100}%)`;
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-        }
-
-        function autoRotate() {
-            currentSlide = (currentSlide + 1) % dots.length;
-            showSlide(currentSlide);
-        }
-
-        let autoSlideInterval = setInterval(autoRotate, 5000);
-
-        carouselContainer.addEventListener('mouseenter', () => {
-            clearInterval(autoSlideInterval);
-        });
-
-        carouselContainer.addEventListener('mouseleave', () => {
-            autoSlideInterval = setInterval(autoRotate, 5000);
-        });
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                showSlide(currentSlide);
-            });
-        });
-
-        // Initialize first slide
-        showSlide(currentSlide);
-    }
-});
-
-    </script>
 </body>
 </html>
