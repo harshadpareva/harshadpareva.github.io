@@ -83,7 +83,7 @@ header {
 
 /* Hamburger Button */
 .menu-btn {
-  display: none; /* Hide by default on desktop */
+  display: block; /* Hide by default on desktop */
   background: none;
   border: none;
   cursor: pointer;
