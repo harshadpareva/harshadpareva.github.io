@@ -794,23 +794,3 @@ footer {
   background: #333;
   color: white;
 }
-
-@media (max-width: 768px) {
-  .header-content {
-      flex-direction: column;
-      text-align: center;
-  }
-
-  .nav-menu {
-      flex-direction: column;
-      gap: 10px;
-  }
-
-  .hero h1 {
-      font-size: 2rem;
-  }
-
-  .hero p {
-      font-size: 1rem;
-  }
-}
