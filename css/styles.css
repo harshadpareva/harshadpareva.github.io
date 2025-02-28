@@ -77,7 +77,8 @@ header {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 20px; /* Space between menu items */
+  position: relative; /* Change from absolute to relative */
 }
 
 /* Hamburger Button */
