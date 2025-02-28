@@ -49,6 +49,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  position: relative;
 }
 
 .header-text {
@@ -82,7 +83,7 @@ header {
 
 /* Hamburger Button */
 .menu-btn {
-  display: block; /* Hide by default on desktop */
+  display: none; /* Hide by default on desktop */
   background: none;
   border: none;
   cursor: pointer;
@@ -133,7 +134,7 @@ header {
   }
 
   .nav-menu a {
-    display: block; /* Hide regular menu links on mobile */
+    display: none; /* Hide regular menu links on mobile */
   }
 
   .dropdown-menu {
